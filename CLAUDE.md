@@ -23,26 +23,27 @@ HTML + CSS + JS vanilla. Sin frameworks ni build. Abrir `index.html` o usar Live
 - Noche bordo (secciones oscuras): `#120807` / `#23100D`
 - Tipografías: Geist (titulares y texto) + Geist Mono (etiquetas y datos). No usar Inter, Roboto ni Arial.
 - Nav: pill flotante oscuro (noche bordo, filo latón, volumen 3D) + barra flotante inferior con CTA que entra al scrollear.
-- Concepto visual: hero claro (fondo hueso→crema, grilla desvanecida y arco bordo al pie), servicios como índice + panel (hover/teclado cambian la ficha), proceso en abanico de cartas, tarjetas de vidrio sobre anillo animado, cierre oscuro con formulario.
-- Logo: el sello "BK" es PROVISORIO (buscar `REEMPLAZAR POR LOGO FINAL`).
+- Concepto visual: hero claro (fondo hueso→crema, grilla desvanecida y arco bordo al pie) con la flecha del logo que sale del arco y se dibuja al cargar, servicios como índice + panel (hover/teclado cambian la ficha), tarjetas de vidrio sobre anillo animado, cierre oscuro con formulario.
+- Logo: BK Marketing (BK con flecha curva). Vector en `img/` y como `<symbol>` al inicio del `<body>` (`#bk-mark` = solo BK, `#bk-logo` = BK + MARKETING). Color crema `#EEE5D6` sobre fondos oscuros o bordo.
+- La flecha es parte central de la estética: reutilizarla como recurso gráfico cuando sume.
 
 ## Voz y copy
 - Español rioplatense con voseo. Conversacional, seguro sin soberbia, frases cortas.
 - Palabras SÍ: criterio, intención, autoridad, confianza, estética, sin humo.
 - PROHIBIDO: sinergia, mindset, "romper el algoritmo", "en la era digital", promesas de riqueza rápida, motivacional vacío, emojis.
-- Nunca sonar a vende-cursos, gurú ni infoproducto.
-- Regla del conocimiento: se muestra el qué y el porqué, NUNCA el cómo paso a paso (eso es lo que se vende). No detallar metodología interna.
+- Nunca sonar a vende-cursos, gurú ni infoproducto. Y no nombrar "vende-cursos" ni "cursos" en la página, ni siquiera para negarlo.
+- Regla del conocimiento: se muestra el qué y el porqué, NUNCA el cómo paso a paso (eso es lo que se vende). No detallar metodología interna ni etapas de trabajo (por eso se sacó la sección "Cómo trabajamos").
+- Sin precios en la página: la inversión se define en la llamada.
+- Equipo: los cuatro (Lucas, Camila, Guido, Ramiro) se presentan por igual, mismo formato y sin títulos jerárquicos.
 - No inventar métricas ni testimonios. Si falta un dato, dejar placeholder entre [corchetes].
 
 ## Pendientes (buscar `[` en index.html)
-- [ ] Precios DWY/DFY y período (`[PRECIO]`) — los define Guido
 - [ ] 3 casos de estudio con números reales (bloques `CASO 1/2/3`)
-- [ ] Bios del equipo, apellidos de Guido y Ramiro, handle de Camila
+- [ ] Bios del equipo, apellido de Guido, handles de Camila, Guido y Ramiro
 - [ ] Rangos de facturación del formulario (`[Rango 1..4]`)
 - [ ] Mail de contacto (`[MAIL]`)
 - [ ] Embed de Calendly (buscar `PEGAR ACÁ EL EMBED DE CALENDLY`)
 - [ ] Conectar el formulario al CRM: función `enviarAplicacion()` en `script.js`
-- [ ] Logo final
 - [ ] Dominio y deploy (Vercel o GitHub Pages)
 
 ## Reglas de trabajo
