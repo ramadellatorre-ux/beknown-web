@@ -93,12 +93,51 @@ setTimeout(()=>document.querySelectorAll('.hero [data-anim]').forEach(el=>el.cla
 const io=new IntersectionObserver(entries=>entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
+/* 4.2) Manifiesto: cada idea se enciende palabra por palabra según el scroll */
+(function manifiesto(){
+  const items=[...document.querySelectorAll('.mani')];
+  if(!items.length) return;
+  if(reduceMotion){ items.forEach(m=>m.classList.add('is-done')); return; }
+  // envuelve cada palabra en <span class="w">, respetando los <em>
+  function envolver(nodo){
+    [...nodo.childNodes].forEach(n=>{
+      if(n.nodeType===3){
+        const frag=document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach(t=>{
+          if(!t) return;
+          if(/^\s+$/.test(t)){ frag.appendChild(document.createTextNode(t)); return; }
+          const w=document.createElement('span'); w.className='w'; w.textContent=t; frag.appendChild(w);
+        });
+        n.replaceWith(frag);
+      } else if(n.nodeType===1) envolver(n);
+    });
+  }
+  const datos=items.map(m=>{ const p=m.querySelector('.mani__text'); envolver(p); return { m, p, ws:[...p.querySelectorAll('.w')] }; });
+  let pendiente=false;
+  function pintar(){
+    pendiente=false;
+    const vh=window.innerHeight;
+    datos.forEach(({m,p,ws})=>{
+      const r=p.getBoundingClientRect();
+      // arranca cuando el texto entra por abajo y termina antes de llegar a la mitad de la pantalla
+      const prog=Math.min(1, Math.max(0, (vh*.88 - r.top) / (r.height + vh*.38)));
+      const n=Math.round(prog*ws.length);
+      ws.forEach((w,i)=>w.classList.toggle('on', i<n));
+      m.classList.toggle('is-done', n===ws.length);
+    });
+  }
+  function pedir(){ if(!pendiente){ pendiente=true; requestAnimationFrame(pintar); } }
+  window.addEventListener('scroll', pedir, {passive:true});
+  window.addEventListener('resize', pedir);
+  pintar();
+})();
+
 /* 4.5) Halo que sigue al cursor, con inercia */
 (function halo(){
   const el=document.getElementById('glow'); if(!el) return;
   // sin mouse fino o con movimiento reducido no tiene sentido: lo sacamos del DOM
   if(reduceMotion || !window.matchMedia('(hover:hover) and (pointer:fine)').matches){ el.remove(); return; }
-  const OSCURAS='.verdad, .precios, .contacto, .cierre, .footer';
+  const OSCURAS='.verdad, .precios, .manifiesto, .contacto, .cierre, .footer';
   let destX=innerWidth/2, destY=innerHeight/2, x=destX, y=destY, raf=null, visible=false;
   function pintar(){
     x += (destX-x)*0.11; y += (destY-y)*0.11;
