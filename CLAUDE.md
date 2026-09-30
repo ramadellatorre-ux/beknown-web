@@ -47,6 +47,7 @@ HTML + CSS + JS vanilla. Sin frameworks ni build. Abrir `index.html` o usar Live
 - [ ] Dominio y deploy (Vercel o GitHub Pages)
 
 ## Reglas de trabajo
+- Al cambiar `styles.css` o `script.js`, subir el `?v=N` de sus links en `index.html` (GitHub Pages cachea 10 min y el HTML nuevo con CSS viejo rompe el hero).
 - Cambios chicos y puntuales; no reescribir secciones que no se pidieron.
 - Mantener responsive (probar a 390px), foco visible y `prefers-reduced-motion`.
 - Mantener un solo objetivo de conversión: no agregar links que saquen al visitante de la página.
