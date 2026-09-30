@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=3">
+<link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body id="top">
 
@@ -93,17 +93,28 @@
 
 <!-- ============ PROBLEMA ============ -->
 <section class="section problema" id="problema">
-  <div class="wrap">
-    <span class="eyebrow reveal">El problema</span>
-    <h2 class="section__title reveal">Sabés hacer tu trabajo. <span class="hl">Nadie se entera.</span></h2>
-    <div class="problema__grid">
-      <p class="problema__lead reveal">No es falta de conocimiento. Es que tu presencia online no refleja el nivel real de lo que hacés. Entonces pasa lo peor: <strong>te comparan por precio</strong> con gente que sabe la mitad que vos, pero se muestra el doble.</p>
-      <ul class="painlist reveal">
-        <li>Publicás poco o nada, porque lo que ves en redes no se parece a vos.</li>
-        <li>Tu contenido es técnico, correcto y aburrido. Y no genera tracción.</li>
-        <li>Tu presencia visual está descuidada y no transmite la calidad de tu servicio.</li>
-        <li>Te llegan prospectos no calificados que arrancan pidiendo descuento.</li>
+  <div class="wrap problema__grid">
+    <div class="problema__intro">
+      <span class="eyebrow reveal">El problema</span>
+      <h2 class="section__title reveal">Sabés hacer tu trabajo. <span class="hl">Nadie se entera.</span></h2>
+      <p class="problema__lead reveal">No es falta de conocimiento. Es que tu presencia online no refleja el nivel real de lo que hacés. Entonces pasa lo peor: <mark>te comparan por precio</mark> con gente que sabe la mitad que vos, pero se muestra el doble.</p>
+    </div>
+    <!-- la línea baja con el scroll y va encendiendo cada dolor; al final gira y sube como la flecha del logo -->
+    <div class="pains" id="pains">
+      <span class="pains__track" aria-hidden="true"><span class="pains__fill"></span></span>
+      <ul>
+        <li class="pain"><span class="pain__dot" aria-hidden="true"></span><span class="pain__n">01</span><p>Publicás poco o nada, porque lo que ves en redes no se parece a vos.</p></li>
+        <li class="pain"><span class="pain__dot" aria-hidden="true"></span><span class="pain__n">02</span><p>Tu contenido es técnico, correcto y aburrido. Y no genera tracción.</p></li>
+        <li class="pain"><span class="pain__dot" aria-hidden="true"></span><span class="pain__n">03</span><p>Tu presencia visual está descuidada y no transmite la calidad de tu servicio.</p></li>
+        <li class="pain"><span class="pain__dot" aria-hidden="true"></span><span class="pain__n">04</span><p>Te llegan prospectos no calificados que arrancan pidiendo descuento.</p></li>
       </ul>
+      <div class="pains__turn">
+        <svg class="pains__arrow" viewBox="0 0 160 120" aria-hidden="true">
+          <path class="pains__arrow-line" d="M19 0V38C19 88 52 100 118 62" pathLength="1"/>
+          <path class="pains__arrow-head" d="M109 47 153 41 127 77Z"/>
+        </svg>
+        <p><strong>La buena noticia: tiene solución.</strong><a href="#servicios">Ver qué hacemos <span aria-hidden="true">→</span></a></p>
+      </div>
     </div>
   </div>
 </section>
@@ -605,6 +616,6 @@
   </div>
 </div>
 
-<script src="script.js?v=3"></script>
+<script src="script.js?v=4"></script>
 </body>
 </html>

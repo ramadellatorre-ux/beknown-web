@@ -93,6 +93,32 @@ setTimeout(()=>document.querySelectorAll('.hero [data-anim]').forEach(el=>el.cla
 const io=new IntersectionObserver(entries=>entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
+/* 4.1) Problema: la línea baja con el scroll, enciende cada dolor y al final gira como la flecha */
+(function problema(){
+  const box=document.getElementById('pains'); if(!box) return;
+  const items=[...box.querySelectorAll('.pain')];
+  function fin(){ items.forEach(li=>li.classList.add('on')); box.style.setProperty('--p',1); box.classList.add('is-done'); }
+  if(reduceMotion){ fin(); return; }
+  const track=box.querySelector('.pains__track');
+  let pendiente=false;
+  function pintar(){
+    pendiente=false;
+    const vh=window.innerHeight, r=track.getBoundingClientRect();
+    // la punta de la línea sigue a un punto fijo de la pantalla (62% de alto)
+    const p=Math.min(1, Math.max(0, (vh*.62 - r.top) / r.height));
+    box.style.setProperty('--p', p.toFixed(3));
+    items.forEach(li=>{
+      const dot=li.querySelector('.pain__dot').getBoundingClientRect();
+      li.classList.toggle('on', dot.top + dot.height/2 <= r.top + p*r.height + 1);
+    });
+    box.classList.toggle('is-done', p>=.995);
+  }
+  function pedir(){ if(!pendiente){ pendiente=true; requestAnimationFrame(pintar); } }
+  window.addEventListener('scroll', pedir, {passive:true});
+  window.addEventListener('resize', pedir);
+  pintar();
+})();
+
 /* 4.2) Manifiesto: cada idea se enciende palabra por palabra según el scroll */
 (function manifiesto(){
   const items=[...document.querySelectorAll('.mani')];

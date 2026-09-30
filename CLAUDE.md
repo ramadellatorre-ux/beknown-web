@@ -23,7 +23,7 @@ HTML + CSS + JS vanilla. Sin frameworks ni build. Abrir `index.html` o usar Live
 - Noche bordo (secciones oscuras): `#120807` / `#23100D`
 - Tipografías: Geist (titulares y texto) + Geist Mono (etiquetas y datos). No usar Inter, Roboto ni Arial.
 - Nav: pill flotante oscuro (noche bordo, filo latón, volumen 3D) + barra flotante inferior con CTA que entra al scrollear.
-- Concepto visual: hero claro (fondo hueso→crema, grilla desvanecida y arco bordo al pie) con la flecha del logo que sale del arco y se dibuja al cargar, servicios como índice + panel (hover/teclado cambian la ficha), tarjetas de vidrio sobre anillo animado, equipo en tarjetas con foto circular (ola bordo y redes al hover), manifiesto oscuro que se enciende palabra por palabra al scrollear + banda de palabras en movimiento, cierre oscuro con formulario.
+- Concepto visual: hero claro (fondo hueso→crema, grilla desvanecida y arco bordo al pie) con la flecha del logo que sale del arco y se dibuja al cargar, problema con intro fija y una línea que baja con el scroll encendiendo cada dolor y al final gira como la flecha ("tiene solución"), servicios como índice + panel (hover/teclado cambian la ficha), tarjetas de vidrio sobre anillo animado, equipo en tarjetas con foto circular (ola bordo y redes al hover), manifiesto oscuro que se enciende palabra por palabra al scrollear + banda de palabras en movimiento, cierre oscuro con formulario.
 - Logo: BK Marketing (BK con flecha curva). Vector en `img/` y como `<symbol>` al inicio del `<body>` (`#bk-mark` = solo BK, `#bk-logo` = BK + MARKETING). Color crema `#EEE5D6` sobre fondos oscuros o bordo.
 - La flecha es parte central de la estética: reutilizarla como recurso gráfico cuando sume.
 
