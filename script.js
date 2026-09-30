@@ -187,6 +187,28 @@ async function enviarAplicacion(data){
   // Ejemplo: await fetch('[URL_WEBHOOK]', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data)});
   return true;
 }
+/* Agenda de Calendly: se carga recién después de aplicar, con el nombre precargado */
+function abrirAgenda(nombre){
+  const box=document.getElementById('agenda');
+  if(box.classList.contains('is-open')) return;
+  const q=new URLSearchParams({
+    embed_domain: location.host || 'localhost', embed_type:'Inline', hide_gdpr_banner:'1',
+    // colores de marca (Calendly los aplica solo en planes pagos; en el gratuito se ignoran)
+    primary_color:'7f0000', background_color:'fffcf7', text_color:'1e1512'
+  });
+  if(nombre) q.set('name', nombre);
+  const f=document.createElement('iframe');
+  f.src=box.dataset.calendly + '?' + q.toString();
+  f.title='Elegí un horario para la llamada estratégica';
+  box.replaceChildren(f);
+  box.classList.add('is-open');
+}
+// Calendly avisa por postMessage cuando se confirma la reserva
+window.addEventListener('message', e=>{
+  if(e.origin!=='https://calendly.com' || !e.data || e.data.event!=='calendly.event_scheduled') return;
+  status.className='form__status'; status.textContent='¡Listo! Tu llamada quedó agendada. Te llegó la confirmación por mail.';
+});
+
 const form=document.getElementById('applyForm'), status=document.getElementById('formStatus');
 form.addEventListener('submit', async (e)=>{
   e.preventDefault();
@@ -197,6 +219,7 @@ form.addEventListener('submit', async (e)=>{
   try{
     await enviarAplicacion(data);
     status.className='form__status'; status.textContent='Aplicación enviada. Ahora elegí un horario en la agenda.';
+    abrirAgenda(data.nombre);
     document.getElementById('agenda').scrollIntoView({behavior: reduceMotion?'auto':'smooth', block:'start'});
   }catch(err){
     status.className='form__status err'; status.textContent='No se pudo enviar. Probá de nuevo en unos minutos.';

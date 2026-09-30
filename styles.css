@@ -512,8 +512,13 @@ button{ font-family:inherit; }
 .form__status{ font-size:.92rem; min-height:1.2em; color:var(--laton-2); }
 .form__status.err{ color:#FF9C8F; }
 .agenda{ margin-top:var(--s4); border:1.5px dashed rgba(176,137,79,.5); border-radius:22px; min-height:420px; display:grid; place-items:center; text-align:center; padding:var(--s4); color:rgba(255,246,236,.6); }
-.agenda strong{ display:block; color:#FFF6EC; font-size:1.1rem; margin-bottom:6px; }
-.agenda iframe{ width:100%; min-height:640px; border:0; border-radius:16px; }
+.agenda__lock{ display:grid; justify-items:center; gap:6px; max-width:32ch; }
+.agenda__lock svg{ width:34px; height:34px; color:var(--laton); margin-bottom:6px; }
+.agenda strong{ display:block; color:#FFF6EC; font-size:1.1rem; }
+/* abierta: el calendario de Calendly ocupa la caja */
+.agenda.is-open{ display:block; padding:0; min-height:0; border:1px solid rgba(176,137,79,.35); overflow:hidden; background:#FFFCF7; }
+.agenda iframe{ display:block; width:100%; height:700px; border:0; }
+@media (max-width:760px){ .agenda iframe{ height:760px; } }
 
 /* ---------- cierre ---------- */
 .cierre{ background:var(--bordo); color:#FFF6EC; text-align:center; position:relative; overflow:hidden; }

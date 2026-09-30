@@ -42,7 +42,7 @@ HTML + CSS + JS vanilla. Sin frameworks ni build. Abrir `index.html` o usar Live
 - [ ] Fotos del equipo de Lucas, Camila y Guido (cuadradas, en `img/equipo/`; buscar `FOTO:`), apellido de Guido, handles de Camila, Guido y Ramiro
 - [ ] Rangos de facturación del formulario (`[Rango 1..4]`)
 - [ ] Mail de contacto (`[MAIL]`)
-- [ ] Embed de Calendly (buscar `PEGAR ACÁ EL EMBED DE CALENDLY`)
+- [ ] Calendly (conectado a `calendly.com/beknownequipo/30min`, se abre al enviar la aplicación): renombrar el evento a "Llamada estratégica", ponerlo en español y cargar disponibilidad
 - [ ] Conectar el formulario al CRM: función `enviarAplicacion()` en `script.js`
 - [ ] Dominio y deploy (Vercel o GitHub Pages)
 
