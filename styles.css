@@ -115,8 +115,8 @@ button{ font-family:inherit; }
              inset 3px 3px 8px rgba(0,0,0,.26), inset -3px 3px 8px rgba(0,0,0,.24); }
 
 .brand{ position:relative; z-index:1; display:inline-flex; align-items:center; gap:10px; color:#FFF6EC; flex:0 0 auto; }
-.brand__mark{ width:40px; height:38px; flex:0 0 auto; color:#EEE5D6; }
-.brand__logo{ display:block; width:150px; aspect-ratio:372/324; color:#EEE5D6; }
+.brand__mark{ width:40px; height:41px; flex:0 0 auto; color:#EEE5D6; }
+.brand__logo{ display:block; width:96px; aspect-ratio:435/446; color:#EEE5D6; }
 .brand__name{ font-weight:800; font-size:1.34rem; letter-spacing:-.03em; }
 
 .nav__links{ position:relative; z-index:1; flex:1; display:flex; align-items:center; justify-content:center; gap:34px; }
@@ -398,7 +398,7 @@ button{ font-family:inherit; }
 .equipo__head{ display:flex; justify-content:space-between; align-items:flex-start; gap:var(--s6); }
 .equipo__kicker{ display:block; font-family:var(--mono); font-size:.86rem; text-transform:uppercase; letter-spacing:.55em; color:var(--accent-ink); margin-bottom:var(--s2); }
 .equipo__side{ display:flex; flex-direction:column; align-items:flex-end; gap:var(--s3); flex:0 0 auto; }
-.equipo__logo{ display:block; width:124px; aspect-ratio:372/324; color:var(--bordo); }
+.equipo__logo{ display:block; width:96px; aspect-ratio:435/446; color:var(--bordo); }
 .equipo__social{ display:flex; align-items:center; justify-content:center; gap:12px; margin-top:var(--s6); color:var(--muted); font-size:.92rem; }
 .equipo__social a{ display:grid; place-items:center; width:40px; height:40px; border-radius:50%; border:1px solid var(--line); color:var(--muted); transition:color .25s, border-color .25s; }
 .equipo__social a:hover{ color:var(--accent-ink); border-color:var(--accent-ink); }
@@ -438,7 +438,7 @@ button{ font-family:inherit; }
 @media (max-width:700px){
   .equipo__head{ flex-direction:column; gap:var(--s3); }
   .equipo__side{ flex-direction:row; align-items:center; justify-content:space-between; width:100%; }
-  .equipo__logo{ width:84px; }
+  .equipo__logo{ width:66px; }
   .equipo__kicker{ letter-spacing:.35em; }
 }
 @media (max-width:520px){ .team{ grid-template-columns:1fr; max-width:360px; } }
@@ -546,7 +546,7 @@ button{ font-family:inherit; }
   width:100%; max-width:880px; padding:13px 13px 13px 20px; border-radius:18px;
   background:rgba(18,8,7,.92); backdrop-filter:blur(16px) saturate(1.25); -webkit-backdrop-filter:blur(16px) saturate(1.25);
   border:1px solid rgba(176,137,79,.28); box-shadow:0 26px 60px -26px rgba(0,0,0,.8); }
-.dock__mark{ width:40px; height:38px; flex:0 0 auto; color:#EEE5D6; }
+.dock__mark{ width:40px; height:41px; flex:0 0 auto; color:#EEE5D6; }
 .dock__claim{ flex:1; min-width:0; color:#FFF6EC; font-weight:600; font-size:1.05rem;
   line-height:1.25; letter-spacing:-.018em; text-wrap:balance; }
 .dock__short{ display:none; }
