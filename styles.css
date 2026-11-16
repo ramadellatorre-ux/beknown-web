@@ -424,7 +424,7 @@ button{ font-family:inherit; }
 .member__initials{ width:100%; height:100%; display:grid; place-items:center; font-family:var(--mono); font-size:2rem; font-weight:600; color:#FFF6EC;
   background:linear-gradient(135deg,var(--bordo),var(--bordo-2)); }
 .member__name{ position:relative; z-index:1; margin-top:var(--s2); font-size:1.18rem; font-weight:700; letter-spacing:-.01em; }
-.member__role{ position:relative; z-index:1; font-size:.9rem; color:var(--muted); }
+.member__role{ position:relative; z-index:1; font-size:.9rem; line-height:1.5; color:var(--muted); min-height:3em; text-wrap:balance; }
 .member__social{ position:relative; z-index:1; display:flex; gap:12px; margin-top:10px; opacity:0; transition:opacity .3s var(--ease); }
 .member:hover .member__social, .member:focus-within .member__social{ opacity:1; }
 .member__social a{ display:grid; place-items:center; width:36px; height:36px; color:var(--muted); transition:color .25s; }
